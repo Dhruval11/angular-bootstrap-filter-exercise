@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js">
+</script>
+<script type="text/javascript" src="javascript/index.js"></script>
+</head>
+<body>
+<div ng-app="myApp">
+<div ng-controller="myCtrl" class="container">
+<input type="text" placeholder="search" ng-model="searchData">
+<br>
+<br>
+<table class="table table-bordered table-hover">
+	<thead class="head">
+    <th>{{"name"}}</th>
+     <th>{{"gender"}}</th>
+     <th>{{"age"}}</th>
+     <th>{{"balance"}}</th>
+     <th>{{"email"}}</th>
+     <th>{{"phone"}}</th>
+     </thead>
+<tr ng-repeat="i in data|filter:searchData">
+		<td>{{i.name}}</td>
+        <td>{{i.gender}}</td>
+        <td >{{i.age}}</td>
+        <td >{{i.email}}</td>
+        <td >{{i.phone}}</td>
+        <td>{{i.balance}}</td>
+      </tr>
+   </table>
+ </div>
+</div>
+</body>
+</html>
